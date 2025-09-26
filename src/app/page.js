@@ -1,3 +1,4 @@
+import HeroSection from "@/components/home/HeroSection";
 import Image from "next/image";
 
 export default function Home() {
@@ -99,8 +100,8 @@ export default function Home() {
     //     </a>
     //   </footer>
     // </div>
-    <div className="w-">
-      uoo
+    <div className="">
+      <HeroSection />
     </div>
   );
 }
