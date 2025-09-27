@@ -80,12 +80,12 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            href={"/shop"}
+            href={"/collection"}
             className={`hover:text-primary transition ${
               isActive ? "text-primary font-medium" : ""
             }`}
           >
-            Shop
+            Collection
           </Link>
           {user && (
             <Link

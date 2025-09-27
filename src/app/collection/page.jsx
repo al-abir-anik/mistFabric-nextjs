@@ -1,9 +1,13 @@
-import all_product from "@/assets/all_product";
 import ProductCard from "@/components/ProductCard";
+import dbConnect, { collectionNames } from "@/lib/dbConnect";
 
-const page = () => {
+const Collection = async () => {
+  const allProducts = await dbConnect(collectionNames.allProductCollection)
+    .find({})
+    .toArray();
+
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 mt-12">
+    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 mt-12 mb-16">
       {/* Filter options */}
       <div className="min-w-60 hidden sm:block">
         <p className="my-2 text-xl flex items-center gap-2">FILTERS</p>
@@ -84,8 +88,8 @@ const page = () => {
           </select>
         </div>
 
-        <div className="grid grid-cols-5 gap-y-10">
-          {all_product.map((product, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10">
+          {allProducts.map((product, index) => (
             <ProductCard key={index} product={product}></ProductCard>
           ))}
         </div>
@@ -94,4 +98,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Collection;

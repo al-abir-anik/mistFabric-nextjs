@@ -1,62 +1,38 @@
-"use client";
 import Image from "next/image";
+import Link from "next/link";
 // import { useAppContext } from "@/context/AppContext";
 
 const ProductCard = ({ product }) => {
   // const { currency, router } = useAppContext();
 
   return (
-    <div
-      onClick={() => {
-        router.push("/product/" + product.id);
-        scrollTo(0, 0);
-      }}
+    <Link
+      href={`collection/${product._id}`}
       className="flex flex-col items-start gap-0.5 max-w-[200px] w-full cursor-pointer"
     >
-      <div className="cursor-pointer group relative bg-gray-500/10 rounded-lg w-full h-60 flex items-center justify-center">
+      <div className="group relative bg-gray-500/10 rounded-lg w-full h-60 flex items-center justify-center overflow-hidden cursor-pointer ">
         <Image
-          src={product.images}
+          src={product.images[0]}
           alt={product.name}
-          className="group-hover:scale-105 transition object-cover w-4/5 h-4/5 md:w-full md:h-full"
-          width={1000}
-          height={1000}
+          className="w-4/5 h-4/5 md:w-full md:h-full group-hover:scale-105 transition object-cover"
+          width={800}
+          height={100}
         />
-        {/* <button className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md">
-          <Image className="h-3 w-3" src={assets.heart_icon} alt="heart_icon" />
-        </button> */}
       </div>
 
-      <p className="md:text-base font-medium pt-2 w-full truncate">
+      <p className="w-full pt-2 text-xs md:text-sm hover:text-primary/90 transition-colors truncate">
         {product.name}
       </p>
-      {/* <p className="w-full text-xs text-gray-500/70 max-sm:hidden truncate">
-        {product.description}
-      </p> */}
-      <div className="flex items-center gap-2">
-        <p className="text-xs">{4.5}</p>
-        {/* <div className="flex items-center gap-0.5">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <Image
-              key={index}
-              className="h-3 w-3"
-              src={
-                index < Math.floor(4) ? assets.star_icon : assets.star_dull_icon
-              }
-              alt="star_icon"
-            />
-          ))}
-        </div> */}
-      </div>
 
       <div className="flex items-end justify-between w-full mt-1">
         <p className="text-base font-medium">
-          {/* {currency} */} Tk. {product.new_price}
+          Tk. {product.offerPrice}
+          <span className="pl-1.5 text-sm text-gray-500/70 line-through">
+            {product.regularPrice}
+          </span>
         </p>
-        <button className=" max-sm:hidden px-4 py-1.5 text-gray-500 border border-gray-500/20 rounded-full text-xs hover:bg-slate-50 transition cursor-pointer">
-          Add to cart
-        </button>
       </div>
-    </div>
+    </Link>
   );
 };
 
