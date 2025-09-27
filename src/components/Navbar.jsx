@@ -80,7 +80,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            href={"/all-products"}
+            href={"/shop"}
             className={`hover:text-primary transition ${
               isActive ? "text-primary font-medium" : ""
             }`}

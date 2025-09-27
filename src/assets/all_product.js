@@ -1,328 +1,327 @@
-import p1_img from "./product_1.png";
-import p2_img from "./product_2.png";
-import p3_img from "./product_3.png";
-import p4_img from "./product_4.png";
-import p5_img from "./product_5.png";
-import p6_img from "./product_6.png";
-import p7_img from "./product_7.png";
-import p8_img from "./product_8.png";
-import p9_img from "./product_9.png";
-import p10_img from "./product_10.png";
-import p11_img from "./product_11.png";
-import p12_img from "./product_12.png";
-import p13_img from "./product_13.png";
-import p14_img from "./product_14.png";
-import p15_img from "./product_15.png";
-import p16_img from "./product_16.png";
-import p17_img from "./product_17.png";
-import p18_img from "./product_18.png";
-import p19_img from "./product_19.png";
-import p20_img from "./product_20.png";
-import p21_img from "./product_21.png";
-import p22_img from "./product_22.png";
-import p23_img from "./product_23.png";
-import p24_img from "./product_24.png";
-import p25_img from "./product_25.png";
-import p26_img from "./product_26.png";
-import p27_img from "./product_27.png";
-import p28_img from "./product_28.png";
-import p29_img from "./product_29.png";
-import p30_img from "./product_30.png";
-import p31_img from "./product_31.png";
-import p32_img from "./product_32.png";
-import p33_img from "./product_33.png";
-import p34_img from "./product_34.png";
-import p35_img from "./product_35.png";
-import p36_img from "./product_36.png";
-
 let all_product = [
   {
-    id: 1,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Striped Peplum Blouse",
     category: "women",
-    image: p1_img,
-    new_price: 50.0,
-    old_price: 80.5,
+    images: ["/images/women1.png"],
+    description:
+      "A chic striped blouse with flutter sleeves and a peplum hem, perfect for both office and casual wear.",
+    offerPrice: 50,
+    regularPrice: 80,
   },
   {
-    id: 2,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Casual Peplum Top",
     category: "women",
-    image: p2_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women2.png"],
+    description:
+      "Lightweight peplum blouse with overlap collar design, offering style and comfort for everyday use.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 3,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Elegant Sleeve Blouse",
     category: "women",
-    image: p3_img,
-    new_price: 60.0,
-    old_price: 100.5,
+    images: ["/images/women3.png"],
+    description:
+      "An elegant flutter sleeve blouse with soft fabric and modern fit for versatile styling.",
+    offerPrice: 60,
+    regularPrice: 100,
   },
   {
-    id: 4,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Office Peplum Shirt",
     category: "women",
-    image: p4_img,
-    new_price: 100.0,
-    old_price: 150.0,
+    images: ["/images/women4.png"],
+    description:
+      "A tailored blouse with structured design and peplum cut, ideal for a polished office look.",
+    offerPrice: 100,
+    regularPrice: 150,
   },
   {
-    id: 5,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Casual Day Blouse",
     category: "women",
-    image: p5_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women5.png"],
+    description:
+      "Trendy overlap blouse that pairs effortlessly with jeans or skirts for a stylish day out.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 6,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Everyday Peplum Blouse",
     category: "women",
-    image: p6_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women6.png"],
+    description:
+      "Soft and breathable peplum blouse designed for daily comfort and fashion-forward looks.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 7,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Chic White Blouse",
     category: "women",
-    image: p7_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women7.png"],
+    description:
+      "Minimalist flutter sleeve blouse with a flattering fit, great for layering or wearing alone.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 8,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Summer Vibe Blouse",
     category: "women",
-    image: p8_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women8.png"],
+    description:
+      "Light and breezy blouse with peplum design, perfect for summer styling.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 9,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Stylish Printed Blouse",
     category: "women",
-    image: p9_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women9.png"],
+    description:
+      "Modern printed blouse with flattering overlap collar and relaxed fit.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 10,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Trendy Peplum Shirt",
     category: "women",
-    image: p10_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women10.png"],
+    description:
+      "Trendy peplum cut blouse with subtle detailing to enhance everyday looks.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 11,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Soft Cotton Blouse",
     category: "women",
-    image: p11_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women11.png"],
+    description:
+      "Made with soft cotton fabric, this blouse ensures comfort while maintaining style.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 12,
-    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    name: "Weekend Casual Blouse",
     category: "women",
-    image: p12_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/women12.png"],
+    description:
+      "Relaxed peplum blouse designed for weekend outings and casual styling.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 13,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Green Slim Bomber Jacket",
     category: "men",
-    image: p13_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men1.png"],
+    description:
+      "A stylish slim-fit bomber jacket with full-zip closure, made for casual and semi-formal wear.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 14,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Classic Bomber Jacket",
     category: "men",
-    image: p14_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men2.png"],
+    description:
+      "Classic bomber jacket with durable fabric, designed for everyday comfort and fashion.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 15,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Casual Green Jacket",
     category: "men",
-    image: p15_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men3.png"],
+    description:
+      "Lightweight green bomber jacket, perfect for layering over shirts and tees.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 16,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Urban Style Bomber",
     category: "men",
-    image: p16_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men4.png"],
+    description:
+      "Trendy bomber jacket with slim fit cut, suitable for both casual and party wear.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 17,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Full-Zip Green Jacket",
     category: "men",
-    image: p17_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men5.png"],
+    description:
+      "Versatile green bomber jacket with full-zip design and ribbed cuffs for a secure fit.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 18,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Streetwear Bomber Jacket",
     category: "men",
-    image: p18_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men6.png"],
+    description:
+      "Streetwear inspired bomber jacket crafted for comfort and a cool urban vibe.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 19,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Modern Green Jacket",
     category: "men",
-    image: p19_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men7.png"],
+    description:
+      "A modern take on the bomber jacket with slim fit tailoring and stylish design.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 20,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Stylish Bomber Jacket",
     category: "men",
-    image: p20_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men8.png"],
+    description:
+      "Stylish bomber jacket with soft lining, keeping you warm and trendy.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 21,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Slim Fit Bomber",
     category: "men",
-    image: p21_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men9.png"],
+    description:
+      "A slim-fit bomber jacket built for versatility and comfort during colder days.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 22,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Casual Bomber Jacket",
     category: "men",
-    image: p22_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men10.png"],
+    description:
+      "Casual zip-up bomber jacket suitable for layering over tees or shirts.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 23,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Outdoor Green Bomber",
     category: "men",
-    image: p23_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men11.png"],
+    description:
+      "Durable outdoor bomber jacket in green, made for comfort and style.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 24,
-    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    name: "Everyday Bomber Jacket",
     category: "men",
-    image: p24_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/men12.png"],
+    description:
+      "Everyday bomber jacket that adds style and comfort to your wardrobe.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 25,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Orange Kid's Hoodie",
     category: "kid",
-    image: p25_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid1.png"],
+    description:
+      "Bright orange hooded sweatshirt with playful colorblock design for kids.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 26,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Colorblock Kid Hoodie",
     category: "kid",
-    image: p26_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid2.png"],
+    description:
+      "Stylish kid’s sweatshirt with hoodie, offering both warmth and fun design.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 27,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Playful Orange Hoodie",
     category: "kid",
-    image: p27_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid3.png"],
+    description:
+      "Playful hooded sweatshirt designed with colorblock patterns for an energetic look.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 28,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Casual Kid Hoodie",
     category: "kid",
-    image: p28_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid4.png"],
+    description:
+      "Casual and comfortable hooded sweatshirt perfect for everyday wear for kids.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 29,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Sporty Kid Hoodie",
     category: "kid",
-    image: p29_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid5.png"],
+    description:
+      "Sporty design hoodie with bold colors to make kids stand out.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 30,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Weekend Hoodie",
     category: "kid",
-    image: p30_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid6.png"],
+    description:
+      "Comfortable sweatshirt with hoodie design, perfect for weekend outings.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 31,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Trendy Orange Hoodie",
     category: "kid",
-    image: p31_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid7.png"],
+    description:
+      "Trendy colorblocked hoodie with breathable fabric for active kids.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 32,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Soft Cotton Hoodie",
     category: "kid",
-    image: p32_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid8.png"],
+    description:
+      "Made from soft cotton fabric, this hoodie ensures comfort all day long.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 33,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Everyday Hoodie",
     category: "kid",
-    image: p33_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid9.png"],
+    description:
+      "A practical and cozy hoodie that suits everyday activities and playtime.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 34,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Bright Kid Hoodie",
     category: "kid",
-    image: p34_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid10.png"],
+    description:
+      "Bright and colorful hooded sweatshirt for a fun and vibrant kids’ outfit.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 35,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Fun Orange Hoodie",
     category: "kid",
-    image: p35_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid11.png"],
+    description:
+      "Fun hooded sweatshirt with playful colorblocking for kids’ fashion.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
   {
-    id: 36,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    name: "Stylish Kid Hoodie",
     category: "kid",
-    image: p36_img,
-    new_price: 85.0,
-    old_price: 120.5,
+    images: ["/images/kid12.png"],
+    description:
+      "Stylish orange hoodie designed for comfort, warmth, and active kids’ lifestyle.",
+    offerPrice: 85,
+    regularPrice: 120,
   },
 ];
 
