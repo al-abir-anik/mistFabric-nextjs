@@ -2,9 +2,8 @@ import ProductCard from "@/components/ProductCard";
 import dbConnect, { collectionNames } from "@/lib/dbConnect";
 
 const Collection = async () => {
-  const allProducts = await dbConnect(collectionNames.allProductCollection)
-    .find({})
-    .toArray();
+  const dbCollection = dbConnect(collectionNames.allProductCollection);
+  const allProducts = await dbCollection.find({}).toArray();
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 mt-12 mb-16">
