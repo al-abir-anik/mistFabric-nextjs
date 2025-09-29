@@ -1,17 +1,17 @@
 "use client";
+import { useAppContext } from "@/context/AppContext";
 import { useState } from "react";
 
 const ProductActions = ({ _id, sizes }) => {
+  const { handleAddToCart } = useAppContext();
   const [selectedSize, setSelectedSize] = useState("");
-  console.log(selectedSize);
-
   const isCarted = false;
   const cartBtnLoading = false;
 
   return (
     <div>
       {/* product size */}
-      <div className="flex flex-col gap-4">
+      {/* <div className="flex flex-col gap-4">
         <p>Select Size</p>
         <div className="flex gap-3">
           {sizes.map((size, index) => (
@@ -25,13 +25,12 @@ const ProductActions = ({ _id, sizes }) => {
               {size}
             </button>
           ))}
-          {/* <p className="pl-2 text-red-500">Please select a size.</p> */}
         </div>
-      </div>
+      </div> */}
 
       {/* add to cart btn */}
       <button
-        // onClick={() => handleAddToCart(_id)}
+        onClick={() => handleAddToCart(_id)}
         // disabled={isCarted || cartBtnLoading?.[_id]}
         className={`w-1/2 py-3.5 my-8 font-medium text-white bg-primary/80 transition-colors ${
           isCarted ? "cursor-not-allowed" : "hover:bg-primary cursor-pointer"

@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-primary: #ea580c;
+  --color-black: #393939;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* toastify */
+.Toastify__toast {
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Loading Spinner */
+.loader {
+  width: 70px;
+  height: 70px;
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border-top: 3px solid #ea580c;
+  border-right: 2px solid transparent;
+  animation: spinner8217 0.8s linear infinite;
+}
+@keyframes spinner8217 {
+  to {
+    transform: rotate(360deg);
+  }
+}
