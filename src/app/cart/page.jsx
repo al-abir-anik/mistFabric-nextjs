@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import OrderForm from "./OrderForm";
+import { useState } from "react";
+import PaymentModal from "@/components/PaymentModal";
 
 const Cart = () => {
   const {
@@ -12,11 +14,12 @@ const Cart = () => {
     removeCartItem,
     increaseQty,
     decreaseQty,
-    qtyLoading,
   } = useAppContext();
 
+  const [showOrderModal, setShowOrderModal] = useState(false);
+
   return (
-    <div className="my-6 lg:my-10 lg:pb-8 flex flex-col lg:flex-row justify-between">
+    <div className="my-6 lg:my-10 lg:pb-8 flex flex-col lg:flex-row justify-between relative">
       <div className="flex-1 max-w-4xl">
         <div className="flex items-center justify-between mb-8 border-b border-gray-500/30 pb-6">
           <p className="text-2xl md:text-3xl text-gray-500">
@@ -70,7 +73,7 @@ const Cart = () => {
                       onClick={() => removeCartItem(product._id)}
                       className="p-1.5 text-xs text-red-600 hover:bg-red-50 border border-primary/30 rounded cursor-pointer"
                     >
-                      "Remove"
+                      Remove
                     </button>
                   </div>
                 </div>
@@ -82,22 +85,14 @@ const Cart = () => {
                       onClick={() => decreaseQty(product._id)}
                       className="w-5 h-full text-md px-1 outline-none cursor-pointer"
                     >
-                      {qtyLoading?.[product._id]?.decrease ? (
-                        <div className="w-3 h-3 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-                      ) : (
-                        "-"
-                      )}
+                      -
                     </button>
                     <span className="w-5 text-center">{product.quantity}</span>
                     <button
                       onClick={() => increaseQty(product._id)}
                       className="w-5 h-full text-md px-1 outline-none cursor-pointer "
                     >
-                      {qtyLoading?.[product._id]?.increase ? (
-                        <div className="w-3 h-3 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-                      ) : (
-                        "+"
-                      )}
+                      +
                     </button>
                   </div>
                 </div>
@@ -121,7 +116,10 @@ const Cart = () => {
       </div>
 
       {/* --- Checkout Form ---  */}
-      <OrderForm />
+      <OrderForm setShowOrderModal={setShowOrderModal} />
+
+      {/* Payment successful Modal */}
+      {showOrderModal && <PaymentModal setShowOrderModal={setShowOrderModal} />}
     </div>
   );
 };

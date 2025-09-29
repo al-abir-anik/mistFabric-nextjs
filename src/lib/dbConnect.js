@@ -3,6 +3,7 @@ const uri = process.env.MONGODB_URI;
 
 export const collectionNames = {
   allProductCollection: "all-products",
+  orderCollection: "all-orders",
 };
 
 export default function dbConnect(collectionName) {

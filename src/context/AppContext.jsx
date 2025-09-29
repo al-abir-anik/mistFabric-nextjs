@@ -74,61 +74,35 @@ export const AppContextProvider = ({ children }) => {
     toast.info("Removed from cart");
   };
 
-  // Update cart product quantity
-  const [qtyLoading, setQtyLoading] = useState({});
   // Increase quantity
   const increaseQty = (id) => {
-    setQtyLoading((prev) => ({
-      ...prev,
-      [id]: { ...(prev[id] || {}), increase: true },
-    }));
-
-    setTimeout(() => {
-      setUserCart((prevCart) =>
-        prevCart.map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-        )
-      );
-
-      setQtyLoading((prev) => ({
-        ...prev,
-        [id]: { ...(prev[id] || {}), increase: false },
-      }));
-    }, 400);
+    setUserCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
   };
 
   // Decrease quantity
   const decreaseQty = (id) => {
-    setQtyLoading((prev) => ({
-      ...prev,
-      [id]: { ...(prev[id] || {}), decrease: true },
-    }));
-
-    setTimeout(() => {
-      setUserCart((prevCart) =>
-        prevCart.map((item) =>
-          item.id === id && item.quantity > 1
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-      );
-
-      setQtyLoading((prev) => ({
-        ...prev,
-        [id]: { ...(prev[id] || {}), decrease: false },
-      }));
-    }, 400);
+    setUserCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
   };
 
   const appInfo = {
     userCart,
+    setUserCart,
     cartItems,
     cartPageLoading,
     handleAddToCart,
     removeCartItem,
     increaseQty,
     decreaseQty,
-    qtyLoading,
   };
 
   return <AppContext.Provider value={appInfo}>{children}</AppContext.Provider>;

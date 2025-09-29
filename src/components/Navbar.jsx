@@ -91,7 +91,7 @@ const Navbar = () => {
           </Link>
           {user && (
             <Link
-              href={"/my-orders"}
+              href={"/myOrders"}
               className={isActive ? "text-primary font-medium" : ""}
             >
               My Orders
