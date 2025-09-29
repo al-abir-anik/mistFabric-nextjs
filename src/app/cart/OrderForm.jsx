@@ -34,6 +34,7 @@ const OrderForm = ({ setShowOrderModal }) => {
         phoneNumber,
         address,
         cartItems,
+        totalAmount,
       };
 
       const res = await fetch("/api/orders", {

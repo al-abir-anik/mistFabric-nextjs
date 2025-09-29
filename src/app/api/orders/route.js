@@ -4,7 +4,8 @@ import dbConnect, { collectionNames } from "@/lib/dbConnect";
 // PLACE ORDER FROM CART PAGE
 export async function POST(req) {
   try {
-    const { guestUserId, phoneNumber, address, cartItems } = await req.json();
+    const { guestUserId, phoneNumber, address, cartItems, totalAmount } =
+      await req.json();
 
     if (!phoneNumber || !address || !cartItems?.length) {
       return NextResponse.json(
@@ -17,9 +18,10 @@ export async function POST(req) {
       guestUserId,
       phoneNumber,
       address,
-      cartItems,
+      orderItem: cartItems,
+      totalAmount,
       status: "pending",
-      createdAt: new Date(),
+      orderDate: new Date(),
     };
     const result = await collection.insertOne(order);
 
@@ -36,4 +38,31 @@ export async function POST(req) {
   }
 }
 
+// GET ALL ORDERS OF CURRENT USER
+export async function GET(req) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const guestUserId = searchParams.get("guestUserId");
 
+    if (!guestUserId) {
+      return NextResponse.json(
+        { error: "guestUserId is required" },
+        { status: 400 }
+      );
+    }
+
+    const collection = await dbConnect(collectionNames.orderCollection);
+    const orders = await collection
+      .find({ guestUserId })
+      .sort({ createdAt: -1 }) // latest first
+      .toArray();
+
+    return NextResponse.json({ success: true, orders });
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch orders" },
+      { status: 500 }
+    );
+  }
+}
