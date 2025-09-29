@@ -18,6 +18,8 @@ const Cart = () => {
 
   const [showOrderModal, setShowOrderModal] = useState(false);
 
+  
+
   return (
     <div className="my-6 lg:my-10 lg:pb-8 flex flex-col lg:flex-row justify-between relative">
       <div className="flex-1 max-w-4xl">

@@ -1,28 +1,25 @@
 "use client";
 import { useAppContext } from "@/context/AppContext";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { PiShoppingCartSimple } from "react-icons/pi";
+import Search from "./Search";
 
 const Navbar = () => {
   const { userCart } = useAppContext();
-  const user = true;
-  const isActive = false;
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(true);
+
+  
 
   return (
     <>
       {isOpen && (
         <div className="w-full py-1.5 font-medium text-sm text-white text-center bg-gradient-to-r from-purple-500 via-[#9938CA] to-[#E0724A]">
-          <div className="w-3/4 flex items-center justify-between mx-auto">
-            <p>Free Shipping all over the country!</p>
+          <div className="w-3/4 mx-auto flex items-center justify-center gap-5">
+            <p>🚚 Free Shipping all over the country</p>
             <div className="flex items-center space-x-6">
-              {/* <button
-                type="button"
-                className="font-normal text-gray-800 bg-white px-7 py-2 rounded-full max-sm:hidden"
-              >
-                Claim Offer
-              </button> */}
               <button
                 onClick={() => setIsOpen(false)}
                 type="button"
@@ -65,18 +62,10 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden sm:flex items-center gap-8">
-          {user && (
-            <Link
-              href={"/admin"}
-              className="py-1 px-3 text-xs border border-gray-300 rounded-full"
-            >
-              Admin Dashboard
-            </Link>
-          )}
           <Link
             href={"/"}
             className={`hover:text-primary transition ${
-              isActive ? "text-primary font-medium" : ""
+              pathname === "/" && "text-primary font-medium"
             }`}
           >
             Home
@@ -84,22 +73,24 @@ const Navbar = () => {
           <Link
             href={"/collection"}
             className={`hover:text-primary transition ${
-              isActive ? "text-primary font-medium" : ""
+              pathname === "/collection" && "text-primary font-medium"
             }`}
           >
             Collection
           </Link>
-          {user && (
-            <Link
-              href={"/myOrders"}
-              className={isActive ? "text-primary font-medium" : ""}
-            >
-              My Orders
-            </Link>
-          )}
+          <Link
+            href={"/myOrders"}
+            className={`hover:text-primary transition ${
+              pathname === "/myOrders" && "text-primary font-medium"
+            }`}
+          >
+            My Orders
+          </Link>
+        </div>
 
+        <div className="flex items-center gap-6">
           {/* Search */}
-          {/* <Search /> */}
+          <Search />
 
           {/* Cart link */}
           <Link href={"/cart"} className="w-10 relative cursor-pointer">
@@ -108,72 +99,6 @@ const Navbar = () => {
               {userCart.length}
             </button>
           </Link>
-
-          {/* login and user */}
-          {user ? (
-            <div className="relative group">
-              {/* <img
-              src={assets.profile_icon || user.photoURL}
-              alt="profile-image"
-              className="w-10"
-            /> */}
-              <ul className="w-36 py-2.5 hidden group-hover:block absolute top-10 right-0 bg-white shadow border border-gray-200 rounded-md z-40">
-                <li
-                  onClick={() => setShowProfileModal(true)}
-                  className="p-1.5 pl-5 hover:bg-primary/10 flex items-center gap-3 cursor-pointer"
-                >
-                  {/* <LuUser />  */}
-                  Profile
-                </li>
-                <li
-                  onClick={() => setShowLogoutModal(true)}
-                  className="p-1.5 pl-5 text-red-400 hover:bg-red-50/90 flex items-center gap-3 cursor-pointer"
-                >
-                  {/* <LuLogOut /> */}
-                  Logout
-                </li>
-              </ul>
-            </div>
-          ) : (
-            <div className="space-x-6">
-              <button
-                //   onClick={() => setShowRegisterForm(true)}
-                className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition text-white rounded-full"
-              >
-                Login
-              </button>
-            </div>
-          )}
-
-          {/* logout modal */}
-          {/* {showLogoutModal && (
-          <div
-            onMouseLeave={() => setShowLogoutModal(false)}
-            className="py-6 px-5 flex flex-col items-center bg-white border border-gray-200 rounded-xl shadow fixed top-16 right-19 z-99"
-          >
-            <span className="mx-auto p-3 bg-red-100 rounded-full">
-              <LuLogOut className="text-xl text-red-500" />
-            </span>
-            <p className="text-gray-600 my-3 text-center">
-              Do you really want to logout?
-            </p>
-
-            <div className="flex items-center justify-center gap-4 mt-3 w-full">
-              <button
-                onClick={() => setShowLogoutModal(false)}
-                className="w-full md:w-28 h-10 rounded-md border border-gray-300 bg-white text-gray-600 font-medium text-sm hover:bg-gray-100 active:scale-95 transition cursor-pointer"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleSignOut}
-                className="w-full md:w-28 h-10 rounded-md text-white bg-red-600 font-medium text-sm hover:bg-red-700 active:scale-95 transition cursor-pointer"
-              >
-                Logout
-              </button>
-            </div>
-          </div>
-        )} */}
         </div>
       </nav>
     </>

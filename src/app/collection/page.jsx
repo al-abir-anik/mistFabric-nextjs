@@ -1,12 +1,37 @@
+"use client";
 import ProductCard from "@/components/ProductCard";
-import dbConnect, { collectionNames } from "@/lib/dbConnect";
+import { useAppContext } from "@/context/AppContext";
+import { useEffect, useState } from "react";
 
-const Collection = async () => {
-  const dbCollection = dbConnect(collectionNames.allProductCollection);
-  const allProducts = await dbCollection.find({}).toArray();
+const Collection = () => {
+  const { search } = useAppContext();
+  const [allProducts, setAllProducts] = useState([]);
+  const [fetchLoading, setFetchLoading] = useState(false);
+
+  useEffect(() => {
+    setFetchLoading(true);
+
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch(
+          `/api/products?search=${encodeURIComponent(search)}`
+        );
+        if (!res.ok) throw new Error("Failed to fetch products");
+        const data = await res.json();
+        setAllProducts(data || []);
+      } catch (err) {
+        console.error(err);
+        setAllProducts([]);
+      } finally {
+        setFetchLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [search]);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 mt-12 mb-16">
+    <div className="min-h-[80vh] flex flex-col sm:flex-row gap-1 sm:gap-10 mt-12 mb-16">
       {/* Filter options */}
       <div className="min-w-60 hidden sm:block">
         <p className="my-2 text-xl flex items-center gap-2">FILTERS</p>
@@ -87,11 +112,17 @@ const Collection = async () => {
           </select>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10">
-          {allProducts.map((product, index) => (
-            <ProductCard key={index} product={product}></ProductCard>
-          ))}
-        </div>
+        {fetchLoading ? (
+          <div className="min-h-[40vh] flex items-center justify-center">
+            <div className="loader"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10">
+            {allProducts.map((product, index) => (
+              <ProductCard key={index} product={product}></ProductCard>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

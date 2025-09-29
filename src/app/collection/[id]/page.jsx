@@ -3,7 +3,6 @@ import { ObjectId } from "mongodb";
 import Image from "next/image";
 import Link from "next/link";
 import ProductActions from "./ProductActions";
-import ProductQuantity from "@/components/ProductQuantity";
 import ProductCard from "@/components/ProductCard";
 import new_collections from "@/assets/new_collections";
 
@@ -102,7 +101,6 @@ const ProductDetailsPage = async ({ params }) => {
           </p>
 
           <ProductActions _id={_id.toString()} sizes={sizes} />
-          <ProductQuantity />
         </div>
       </div>
 

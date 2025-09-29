@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -10,7 +9,7 @@ export const useAppContext = () => {
 };
 
 export const AppContextProvider = ({ children }) => {
-  const router = useRouter();
+  const [search, setSearch] = useState("");
 
   // load user cart data
   const [userCart, setUserCart] = useState([]);
@@ -103,6 +102,8 @@ export const AppContextProvider = ({ children }) => {
     removeCartItem,
     increaseQty,
     decreaseQty,
+    search,
+    setSearch,
   };
 
   return <AppContext.Provider value={appInfo}>{children}</AppContext.Provider>;

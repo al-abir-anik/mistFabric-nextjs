@@ -35,7 +35,7 @@ const MyOrders = () => {
 
       {fetchLoading ? (
         <div className="min-h-[40vh] flex items-center justify-center">
-          <div className="loader"></div>
+          <p className="pb-20 text-xl text-gray-600">Loading Orders...</p>
         </div>
       ) : myOrders.length === 0 ? (
         <p className="w-full min-h-[40vh] text-center text-gray-400 text-lg flex items-center justify-center">
