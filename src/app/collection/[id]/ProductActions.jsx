@@ -32,7 +32,7 @@ const ProductActions = ({ _id, sizes }) => {
       <button
         onClick={() => handleAddToCart(_id)}
         // disabled={isCarted || cartBtnLoading?.[_id]}
-        className={`w-1/2 py-3.5 my-8 font-medium text-white bg-primary/80 transition-colors ${
+        className={`w-1/2 py-3.5 mt-4 mb-8 font-medium text-white bg-primary/80 transition-colors ${
           isCarted ? "cursor-not-allowed" : "hover:bg-primary cursor-pointer"
         }`}
       >

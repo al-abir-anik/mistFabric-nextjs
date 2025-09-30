@@ -25,7 +25,9 @@ export default function RootLayout({ children }) {
         <AppContextProvider>
           <Navbar />
           <hr className="border-gray-300" />
-          <main className="grow w-3/4 mx-auto">{children}</main>
+          <main className="grow w-[90%] sm:w-[88%] md:w-[85%] lg:w-[80%] xl:w-3/4 mx-auto">
+            {children}
+          </main>
           <Footer />
         </AppContextProvider>
         <ToastProvider />

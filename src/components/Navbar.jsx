@@ -11,8 +11,6 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(true);
 
-  
-
   return (
     <>
       {isOpen && (

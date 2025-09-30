@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import ProductActions from "./ProductActions";
 import ProductCard from "@/components/ProductCard";
-import new_collections from "@/assets/new_collections";
 
 const ProductDetailsPage = async ({ params }) => {
   const productId = await params;
@@ -25,6 +24,20 @@ const ProductDetailsPage = async ({ params }) => {
     inStock,
   } = product;
 
+  // const [relatedProducts, setRelatedProducts] = useState([]);
+  // useEffect(() => {
+  //   fetch(
+  //     `https://freshbasket-server-seven.vercel.app/related-products?id=${_id}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setRelatedProducts(data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // }, [_id]);
+
   return (
     <div className="w-[90%] mx-auto mt-10 mb-20">
       <p className="mb-10 text-sm">
@@ -37,13 +50,11 @@ const ProductDetailsPage = async ({ params }) => {
         <div className="flex flex-1 flex-col-reverse sm:flex-row gap-6">
           <div className="w-full sm:w-[16%] flex sm:flex-col justify-between sm:justify-normal gap-3">
             {images.map((img, index) => (
-              <Image
+              <img
                 key={index}
                 src={img}
                 alt="product-image"
                 className="w-[20%] sm:w-full sm:mb-3 shrink-0 cursor-pointer"
-                width={100}
-                height={100}
               />
             ))}
           </div>
@@ -78,7 +89,6 @@ const ProductDetailsPage = async ({ params }) => {
               ))}
             <p className="text-sm ml-2">(4.5)</p>
           </div>
-
           <div className="mt-4">
             <p className="md:w-4/5 pt-3 mb-5 text-gray-500">{description}</p>
             <p className="text-2xl font-medium">
@@ -91,21 +101,25 @@ const ProductDetailsPage = async ({ params }) => {
               (Tax included. Shipping calculated at checkout.)
             </span>
           </div>
-
           <p
             className={`text-lg font-medium mt-6 ${
-              inStock ? "text-primary" : "text-red-400"
+              inStock ? "text-green-500" : "text-green-500"
             }`}
           >
-            {inStock ? "In Stock" : "Stock Out"}
+            {/* {inStock ? "In Stock" : "Stock Out"} */}In Stock
           </p>
-
           <ProductActions _id={_id.toString()} sizes={sizes} />
+
+          <div className="w-3/4 mt-3 py-6 text-sm text-gray-400 space-y-2 border-t border-gray-200">
+            <p>100% Original product.</p>
+            <p> Cash on delivery is available on this product.</p>
+            <p>Easy return and exchange policy within 7 days.</p>
+          </div>
         </div>
       </div>
 
       {/* ------Related Products-------- */}
-      <div className="flex flex-col items-center mt-16">
+      {/* <div className="flex flex-col items-center mt-16">
         <div className="py-10 flex flex-col items-center w-max">
           <h3 className="text-3xl font-medium">Related Products</h3>
           <div className="w-20 h-0.5 bg-primary rounded-full mt-2"></div>
@@ -126,7 +140,7 @@ const ProductDetailsPage = async ({ params }) => {
         >
           See more
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

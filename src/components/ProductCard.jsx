@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-// import { useAppContext } from "@/context/AppContext";
 
 const ProductCard = ({ product }) => {
-  // const { currency, router } = useAppContext();
-
   return (
     <Link
       href={`collection/${product._id}`}

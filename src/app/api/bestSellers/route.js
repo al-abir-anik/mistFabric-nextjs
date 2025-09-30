@@ -2,20 +2,21 @@ import dbConnect, { collectionNames } from "@/lib/dbConnect";
 
 export async function GET(req) {
   try {
-    const { search } = Object.fromEntries(req.nextUrl.searchParams);
     const dbCollection = dbConnect(collectionNames.allProductCollection);
 
-    const query = search ? { name: { $regex: search, $options: "i" } } : {};
-
     const products = await dbCollection
-      .find(query, {
-        projection: {
-          name: 1,
-          offerPrice: 1,
-          regularPrice: 1,
-          images: { $slice: 1 },
-        },
-      })
+      .find(
+        { bestseller: true },
+        {
+          projection: {
+            name: 1,
+            offerPrice: 1,
+            regularPrice: 1,
+            images: { $slice: 1 },
+          },
+        }
+      )
+      .limit(10)
       .toArray();
 
     return new Response(JSON.stringify(products), {
@@ -30,5 +31,3 @@ export async function GET(req) {
     });
   }
 }
-
-
