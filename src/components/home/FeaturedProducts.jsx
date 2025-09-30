@@ -33,9 +33,9 @@ const FeaturedProducts = () => {
 
   return (
     <div className="w-full py-6 space-y-12">
-      <div className="flex flex-col items-center">
-        <p className="text-3xl font-medium">Featured Products</p>
-        <div className="w-28 h-0.5 bg-primary mt-2"></div>
+      <div className="flex flex-col items-center text-center px-4 md:px-0">
+        <p className="text-2xl md:text-3xl font-medium">Featured Products</p>
+        <div className="w-20 md:w-28 h-0.5 bg-primary mt-2"></div>
       </div>
 
       {loading ? (
@@ -43,9 +43,9 @@ const FeaturedProducts = () => {
           Loading featured products...
         </p>
       ) : (
-        <div className="grid grid-cols-5 place-items-center gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 place-items-center gap-6 md:gap-8 lg:gap-10">
           {featuredProducts.map((product, index) => (
-            <ProductCard key={index} product={product}></ProductCard>
+            <ProductCard key={index} product={product} />
           ))}
         </div>
       )}

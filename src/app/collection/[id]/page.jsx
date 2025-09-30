@@ -45,7 +45,7 @@ const ProductDetailsPage = async ({ params }) => {
         <span className="text-primary/90">{name}</span>
       </p>
 
-      <div className="flex flex-col sm:flex-row justify-between gap-16">
+      <div className="flex flex-col md:flex-row justify-between gap-16">
         {/* product image */}
         <div className="flex flex-1 flex-col-reverse sm:flex-row gap-6">
           <div className="w-full sm:w-[16%] flex sm:flex-col justify-between sm:justify-normal gap-3">

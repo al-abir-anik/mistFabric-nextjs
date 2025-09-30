@@ -51,7 +51,7 @@ export async function GET(req) {
       );
     }
 
-    const collection = await dbConnect(collectionNames.orderCollection);
+    const collection = dbConnect(collectionNames.orderCollection);
     const orders = await collection
       .find({ guestUserId })
       .sort({ createdAt: -1 }) // latest first

@@ -43,25 +43,28 @@ export default function HeroSection() {
       >
         {heroSlider.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="w-full h-[60vh] mt-10 mb-14 px-20 flex flex-col md:flex-row items-center justify-between bg-[#F2EDE7] rounded-2xl">
-              <div className="w-2/5 space-y-6">
-                <p className="text-primary">{slide.offer}</p>
-                <h1 className="pb-4 md:text-[40px] text-2xl font-semibold">
+            <div className="w-full h-auto mt-10 mb-14 px-6 md:px-20 py-10 flex flex-col md:flex-row items-center justify-between bg-[#F2EDE7] rounded-2xl">
+              <div className="w-full md:w-2/5 space-y-2 md:space-y-6 text-center md:text-left">
+                <p className="text-primary text-sm md:text-base">
+                  {slide.offer}
+                </p>
+                <h1 className="pb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-[40px] font-semibold">
                   {slide.title}
                 </h1>
 
                 <Link
                   href={`/collection/${slide.id}`}
-                  className="w-fit md:px-10 px-7 md:py-4 py-2 group flex items-center gap-2 bg-primary rounded-full text-white text-sm font-medium cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-6 md:px-10 py-2 md:py-4 bg-primary text-white text-sm md:text-base font-medium rounded-full cursor-pointer group"
                 >
                   Shop Now
-                  <HiArrowLongRight className="text-xl group-hover:translate-x-1 transition" />
+                  <HiArrowLongRight className="text-xl transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
 
-              <div className="w-2/5 flex items-center justify-center">
+              {/* right image */}
+              <div className="w-full md:w-2/5 mt-8 md:mt-0 flex items-center justify-center">
                 <Image
-                  className="lg:w-100 w-48 drop-shadow-2xl"
+                  className="w-48 md:w-80 lg:w-96 drop-shadow-2xl"
                   src={slide.image}
                   alt={`Slide ${slide.id}`}
                   width={400}
