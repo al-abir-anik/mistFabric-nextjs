@@ -17,14 +17,14 @@ const Navbar = () => {
   return (
     <>
       {isOfferOpen && (
-        <div className="w-full py-1.5 font-medium text-xs sm:text-sm text-white text-center bg-gradient-to-r from-purple-500 via-[#9938CA] to-[#E0724A]">
+        <div className="w-full py-3 font-medium text-xs sm:text-sm text-white text-center bg-gradient-to-r from-purple-500 via-[#9938CA] to-[#E0724A]">
           <div className="w-3/4 mx-auto flex items-center justify-center gap-5">
             <p>🚚 Free Shipping all over the country</p>
             <div className="flex items-center space-x-6">
               <button
                 onClick={() => setIsOfferOpen(false)}
                 type="button"
-                className="font-normal text-gray-800 py-2 rounded-full cursor-pointer"
+                className="font-normal text-white text-xl rounded-full cursor-pointer"
               >
                 <IoClose />
               </button>
